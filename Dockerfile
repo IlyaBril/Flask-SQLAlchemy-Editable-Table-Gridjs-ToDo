@@ -22,5 +22,8 @@ EXPOSE 5000
 
 #RUN ["uwsgi", "--http", "127.0.0.1", "--port", "5000", "--master", "-p", "4", "-w", "run:app"]
 
-CMD ["uwsgi", "--http", "0.0.0.0:80", "--wsgi-file", "run.py", \
-    "--callable", "app", "--stats", "0.0.0.0:81"]
+#CMD ["uwsgi", "--http", "0.0.0.0:80", "--wsgi-file", "run.py", \
+#    "--callable", "app", "--stats", "0.0.0.0:81"]
+
+CMD ["uwsgi", "--http", "0.0.0.0:5001", "--master", "-p", "4", "-w", "run:app"]
+
